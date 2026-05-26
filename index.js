@@ -612,6 +612,8 @@ const PROJECT_DESCRIPTIONS = {
   "Focus Timer":
     "A minimal Pomodoro-style productivity timer to boost focus with custom work and break intervals. Built with React, TypeScript and Tailwind CSS.",
 
+   "System Design Visualizer":
+  "Interactive tool for creating and visualizing scalable system architecture diagrams using draggable components and live interactions.",
 };
 
 /* ============================================================
