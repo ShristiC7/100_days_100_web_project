@@ -72,12 +72,23 @@ function loadProjects() {
     projectsPromise = (async () => {
       const isRoot = !window.location.pathname.includes('/contributors/');
       const base = isRoot ? '' : '../';
-      const projectsUrl = new URL(`${base}public/projects.json`, window.location.href).toString();
+     const projectsUrl =
+new URL(`${base}projects.json`,
+window.location.href).toString();
       const response = await fetch(projectsUrl);
       if (!response.ok) {
         throw new Error(`Failed to load projects: ${response.statusText}`);
       }
-      PROJECTS = await response.json();
+const data = await response.json();
+
+PROJECTS = data.map(project => [
+   `Day ${project.projectNo}`,
+   project.projectName,
+   project.projectPath,
+   project.techStack,
+   project.difficulty,
+   project.projectDesc
+]);
     })();
   }
   return projectsPromise;
@@ -85,7 +96,6 @@ function loadProjects() {
 
 // Start fetching immediately
 loadProjects();
-const PROJECT_DESCRIPTIONS = {
 
   "To-Do List":
     "Manage daily tasks efficiently with an interactive checklist system. Add, track and organize activities using a simple productivity-focused interface.",
@@ -679,10 +689,10 @@ function resolveProjectUrls(day, name, url, tags) {
   return { demoUrl, sourceUrl, sourceOnly };
 }
 
-function getProjectDescription(name) {
+function getProjectDescription(project) {
   return (
-    PROJECT_DESCRIPTIONS[name] ||
-    'Explore this project to discover interactive functionality, frontend concepts and implementation details.'
+      project[5] ||
+      'Explore this project to discover interactive functionality.'
   );
 }
 
@@ -702,7 +712,11 @@ function buildProjectCardHTML({
         .split(/\s+/)
         .filter((t) => t && t !== SOURCE_ONLY_TAG);
   const tagsHTML = tagsArray.map((t) => `<span class="tag">${t}</span>`).join('');
-  const description = getProjectDescription(name);
+  const project =
+PROJECTS.find(p => p[1] === name);
+
+const description =
+getProjectDescription(project);
   const sourceOnlyBadge = sourceOnly
     ? '<span class="source-only-badge" title="Requires local server setup">Source only</span>'
     : '';
