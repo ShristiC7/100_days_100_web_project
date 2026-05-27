@@ -1226,7 +1226,7 @@
     ["tool", "productivity", "javascript"],
     "intermediate"
   ],
-  {
+  [
   "projectNo": 180,
   "projectName": DevCollab-Whiteboard",
   "projectType": "Frontend",
@@ -1234,5 +1234,5 @@
   "techStack": ["html", "css", "javascript"],
   "difficulty": "intermediate",
   "projectPath": "./public/index.html"
-}
+  ]
 ]
