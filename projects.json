@@ -1818,18 +1818,17 @@
 "techStack":["tool","javascript","html","css","visualizer","education"],
 "difficulty":"advanced",
 "projectPath":"./public/code-execution-visualizer/index.html"
-<<<<<<< HEAD
 },
-  [
+  {
   "projectNo": 183,
-  "projectName": DevCollab-Whiteboard",
+  "projectName": "DevCollab-Whiteboard",
   "projectType": "Frontend",
   "projectDesc": "Interactive browser-based whiteboard application built with the HTML5 Canvas API featuring freehand drawing, customizable brush controls, responsive fullscreen layout, and PNG export functionality.",
   "techStack": ["html", "css", "javascript"],
   "difficulty": "intermediate",
   "projectPath": "./public/index.html"
-  ]
-=======
-}
->>>>>>> upstream/main
+  }
+
+
+
 ]
