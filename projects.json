@@ -1818,6 +1818,7 @@
 "techStack":["tool","javascript","html","css","visualizer","education"],
 "difficulty":"advanced",
 "projectPath":"./public/code-execution-visualizer/index.html"
+<<<<<<< HEAD
 },
   [
   "projectNo": 183,
@@ -1828,4 +1829,7 @@
   "difficulty": "intermediate",
   "projectPath": "./public/index.html"
   ]
+=======
+}
+>>>>>>> upstream/main
 ]
